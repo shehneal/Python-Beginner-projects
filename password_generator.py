@@ -23,6 +23,8 @@ for i in range(0, nr_symbols):
 for i in range(0, nr_numbers):
   non_randomised_password = non_randomised_password + random.choice(numbers)
 
+print(f"Your password is {non_randomised_password}")
+
 
 
 #Hard Level - Order of characters randomised:
