@@ -11,7 +11,6 @@ lives = 6
 import hangman_art
 
 print(hangman_art.logo)
-print(f'Pssst, the solution is {chosen_word}.')
 
 display = []
 for _ in range(word_length):
