@@ -3,7 +3,7 @@ from replit import clear
 import art
 print(art.logo)
 dictionary_of_bids = {}
-bidders = True
+more_bidders_coming = True
 
 def highest_bidder(bidding_record):
   max_bid = 0
@@ -13,7 +13,7 @@ def highest_bidder(bidding_record):
       winner = person 
   print(f"Winner is {winner}! with a bid of ${max_bid}.")
 
-while bidders:
+while more_bidders_coming:
   name = input("What is your name: ")
   bid = input("What is your bid: $")
   dictionary_of_bids[name] = bid
@@ -21,7 +21,7 @@ while bidders:
   if more_bidders == "yes":
     clear()
   elif more_bidders == "no":
-    bidders = False
+    more_bidders_coming = False
     highest_bidder(dictionary_of_bids)
 
 
