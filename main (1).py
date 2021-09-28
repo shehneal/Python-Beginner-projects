@@ -21,11 +21,11 @@ def higher_followers(a, b):
   elif b > a:
     return b
 
-def player_answer():
+def player_answer(a, b):
   if player_guess == "A":
-    return followers_a
+    return a
   elif player_guess == "B":
-    return followers_b
+    return b
 
 score = 0
 play_game = True
@@ -39,7 +39,7 @@ while play_game:
   followers_b = options("B")
   player_guess = input("Who has more followers? Type 'A' or 'B': ")
   result = higher_followers(followers_a, followers_b)
-  guess = player_answer()
+  guess = player_answer(followers_a, followers_b)
  
   if guess == result:
     score += 1
