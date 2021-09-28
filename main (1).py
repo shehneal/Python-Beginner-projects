@@ -3,30 +3,20 @@ from art import logo, vs
 from replit import clear
 import random
 
-def options(option_name):
-  option = random.choice(data)
-  name = option["name"]
-  followers = option["follower_count"]
-  description = option["description"]
-  country_name = option["country"]
-  if option_name == "A":
-    print(f"Compare {option_name}: {name},  {description}, {country_name}. ")
-  elif option_name == "B":
-    print(f"Against {option_name}: {name}, {description}, {country_name}. ")
-  return followers
+def higher_followers(option_a, option_b):
+  if(option_a[followers] > option_b[followers]):
+     return option_a
+  elif(option_a[followers] < option_b[followers]:
+     return option_b
+     
 
-def higher_followers(a, b):
-  if a > b:
-    return a
-  elif b > a:
-    return b
-
-def player_answer(a, b):
-  if player_guess == "A":
-    return a
-  elif player_guess == "B":
-    return b
-
+def check_player_answer(guess, correct_option):
+  if guess == correct_option[followers]:
+    return True
+  else:
+    return False
+  
+      
 score = 0
 play_game = True
 
@@ -34,14 +24,18 @@ while play_game:
   print(logo)
   if score > 0:
     print(f"You're right! Current score: {score}.")
-  followers_a = options("A")
-  print(vs)
-  followers_b = options("B")
-  player_guess = input("Who has more followers? Type 'A' or 'B': ")
-  result = higher_followers(followers_a, followers_b)
-  guess = player_answer(followers_a, followers_b)
+    
+
+  option_a = random.choice(data)
+  print(f"Compare {option_name}: {option_a[name]},  {description}, {option_a[country_name]}. vs")
+  option_b = random.choice(data)
+  print(f"Compare {option_name}: {option_b[name]},  {description}, {option_b[country_name]}. vs")
  
-  if guess == result:
+  correct_option = higher_followers(option_a, option_b)
+  player_guess = input("Who has more followers? Type 'A' or 'B': ")
+  guess = check_player_answer(player_guess, correct_option)
+ 
+  if guess == True:
     score += 1
     clear()
   else:
