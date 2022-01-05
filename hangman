@@ -1,0 +1,31 @@
+import random
+
+words = ['apple', 'lionn', 'ppie']
+word_to_guess = random.choice(words)
+print(word_to_guess)
+
+no_of_alphabets = len(word_to_guess)
+print(no_of_alphabets)
+
+output = []
+for i in range(no_of_alphabets):
+    output.append('_')
+print(output)
+
+turns = 2
+count = 0
+word_to_guess_list = list(word_to_guess)
+while count < turns:
+    if output == word_to_guess_list:
+        print("Yay! you won!")
+        break
+    guess = input("Guess an alphabet: ")
+    for index_of_guess in range(no_of_alphabets):
+        if word_to_guess_list[index_of_guess] == guess:
+            output[index_of_guess] = guess
+    print(output)
+    count += 1
+
+if count == turns:
+    print("oops! you lost!")
+
